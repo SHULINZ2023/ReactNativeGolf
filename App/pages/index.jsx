@@ -12,6 +12,8 @@ import {default as GameScoreCardTeebox} from './Games/gameScoreCardTeebox';
 import {default as GameScoreCard2Green} from './Games/gameScoreCard2Green';
 import {default as GameScoreCard2Putter} from './Games/gameScoreCard2Putter';
 import {default as GameScoreCard2Hole} from './Games/gameScoreCard2Hole';
+import {default as JoinOpenTournament} from './Games/JoinOpenTournament';
+
 
 export {SignIn, Register,Home, Main, Leaders, Games, Profile, CreateGame, MyGamesList,
-    GameScoreCard,GameScoreCardTeebox,GameScoreCard2Green,GameScoreCard2Putter,GameScoreCard2Hole};
+    GameScoreCard,GameScoreCardTeebox,GameScoreCard2Green,GameScoreCard2Putter,GameScoreCard2Hole,JoinOpenTournament};

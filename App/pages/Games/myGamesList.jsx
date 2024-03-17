@@ -15,17 +15,12 @@ const MyGamesList = ({route}) =>
     const [games, setGames] = useState([]);
     console.log("in myGameList page");
     const { game_type_id, game_type_name } = route.params;
-    console.log("game_type_id" + game_type_id);
-    console.log("game type" + game_type_name);
     const navigation = useNavigation();
-    const suffix = game_type_id == 4 ? "      ->join":"      ->play";
-    /*
-    React.useLayoutEffect(() => {
-        navigation.setOptions({
-          title: {game_type_name}, // Set the title for this screen
-        });
-      }, [navigation]);
-   */
+    const suffix_play = "    ->play";
+    const suffix_join = "    ->join";
+
+
+
     const fetchGames = async() =>
       {
           console.log('Before Axios Request');
@@ -89,7 +84,10 @@ const MyGamesList = ({route}) =>
       const onGamePress = (selectedGame) => {
         //Alert.alert('Game Selected', `You clicked on ${selectedGame.game_name}`);
         // Add logic to start the selected game
-        navigation.navigate('gameScoreCard',{ game: selectedGame });
+        if(selectedGame.status == "init") 
+          navigation.navigate('JoinOpenTournament',{ game_type_id: game_type_id,game_type_name:game_type_name, game_id: selectedGame.game_id });
+        else
+          navigation.navigate('gameScoreCard',{ game: selectedGame });
       };
       const Item = ({ game_id, game_name}) => (
         <View>
@@ -106,7 +104,7 @@ const MyGamesList = ({route}) =>
           keyExtractor={(item) => item.game_id}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => onGamePress(item)}>
-              <Text style={textStyle}>{item.game_name +'   ' + item.game_date + suffix}</Text>
+              <Text style={textStyle}>{item.game_name +' ' + item.game_date + (item.status=="init"?suffix_join:suffix_play) }</Text>
             </TouchableOpacity>
           )}
         />

@@ -22,7 +22,7 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: 'left',
     color:'black',
   },
   fancyText: {

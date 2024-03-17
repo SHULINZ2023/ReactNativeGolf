@@ -4,7 +4,7 @@ import { NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator  } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {SignIn, Register, Home, Main, Games, Leaders, Profile, CreateGame, MyGamesList, GameScoreCard, GameScoreCardTeebox, GameScoreCard2Green,GameScoreCard2Putter,GameScoreCard2Hole} from './App/pages';
+import {SignIn, Register, Home, Main, Games, Leaders, Profile, CreateGame, MyGamesList, GameScoreCard, GameScoreCardTeebox, GameScoreCard2Green,GameScoreCard2Putter,GameScoreCard2Hole,JoinOpenTournament} from './App/pages';
 import { AuthInterceptor } from './App/api/authInterceptor';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +29,8 @@ export default function App() {
           <Stack.Screen name="gameScoreCard2Green" component={GameScoreCard2Green} title="To Green"/>
           <Stack.Screen name="gameScoreCard2Putter" component={GameScoreCard2Putter} title="To Putter"/>
           <Stack.Screen name="gameScoreCard2Hole" component={GameScoreCard2Hole} title="To Hole"/>
+          <Stack.Screen name="JoinOpenTournament" component={JoinOpenTournament} title="Join Open Tournament"/>
+          
         </Stack.Navigator> 
       </NavigationContainer>
     </SafeAreaProvider>

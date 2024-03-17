@@ -4,5 +4,6 @@ export const apiCommon =
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      baseUrl : "https://metagolf.azurewebsites.net/"
+      //baseUrl : "https://metagolf.azurewebsites.net/"
+      baseUrl : "http://10.0.0.22:5069/"
 };
